@@ -1,11 +1,11 @@
 # Variabelen
 
     # Pad van je CSV met benodigde URLs in kolom A (D7) en B (D9)
-csvPath = '/Users/Huub/Desktop/Paddle scripts/All-in-one v2/input.csv'
-outputPath = '/Users/Huub/Desktop/Paddle scripts/All-in-one v2/output.csv'
+csvPath = 'input.csv'
+outputPath = 'output.csv'
 
     # Belangrijk: Vul hier de titel in voor de 'Geen toegang'-pagina
-geenToegangD7 = "Pagina niet gevonden - Agentschap Integratie en Inburgering"
+geenToegangD7 = "Pagina niet gevonden - [CLIENT]"
 geenToegangD9 = "Geen toegang | Paddle"
 
 # Eerst importeren we wat benodigde libraries
@@ -17,7 +17,7 @@ import mechanicalsoup
 browser = mechanicalsoup.StatefulBrowser()
 
 headersD7 = {
-    'authority': 'integratie-inburgering.login.paddlecms.net',
+    'authority': 'login.example-cms.net',
     'cache-control': 'max-age=0',
     'upgrade-insecure-requests': '1',
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36',
@@ -28,11 +28,11 @@ headersD7 = {
     'sec-fetch-user': '?1',
     'sec-fetch-dest': 'document',
     'accept-language': 'en-US,en;q=0.9,nl;q=0.8',
-    'cookie': 'has_js=1; _BEAMER_USER_ID_jnSwhiVG27643=51492089-52a9-413e-a949-457c8c0a0f9a; _BEAMER_FIRST_VISIT_jnSwhiVG27643=2021-09-30T08:21:51.263Z; _BEAMER_FILTER_BY_URL_jnSwhiVG27643=false; SSESS78c91444765b679c1e0609fc36f7f19f=vRXKybKcOs9cMobW40Mp-vCJfAe-VwmmUPW3rnGsii8',
+    'cookie': 'has_js=1; SSESS<SESSION-COOKIE>',
 }
 
 headersD9 = {
-    'authority': 'integratie-inburgering.paddlecms.net',
+    'authority': 'client-site.example-cms.net',
     'cache-control': 'max-age=0',
     'upgrade-insecure-requests': '1',
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36',
@@ -43,7 +43,7 @@ headersD9 = {
     'sec-fetch-user': '?1',
     'sec-fetch-dest': 'document',
     'accept-language': 'en-US,en;q=0.9,nl;q=0.8',
-    'cookie': 'cookie-agreed-version=1.0.0; cookie-agreed-categories=%5B%22required%22%2C%22statistics%22%5D; cookie-agreed=2; _BEAMER_USER_ID_jnSwhiVG27643=51492089-52a9-413e-a949-457c8c0a0f9a; _BEAMER_FIRST_VISIT_jnSwhiVG27643=2021-09-30T08:21:51.263Z; _BEAMER_FILTER_BY_URL_jnSwhiVG27643=false; SSESS3da11856f532423cd291513740d41d4f=I%2CUqCk5kHDJB8pV1uCG7Mmebnf0FGxfrCS-ylvwVtsH3q7JA',
+    'cookie': 'cookie-agreed=2; SSESS<SESSION-COOKIE>',
 }
 
 contents = []

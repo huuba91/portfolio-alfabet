@@ -1,11 +1,11 @@
 # Variabelen
 
     # Pad van je CSV met benodigde URLs in kolom A (D7) en B (D9)
-csvPath = r'D:\Work\Paddle\Scripts\All-in-one v2\input.csv'
-outputPath = r'D:\Work\Paddle\Scripts\All-in-one v2\output.csv'
+csvPath = 'input.csv'
+outputPath = 'output.csv'
 
     # Belangrijk: Vul hier de titel in voor de 'Geen toegang'-pagina voor D7 en D9 - voor de bezoekbaarheid check
-geenToegangD7 = "Geen toegang / Inloggen - Intradura"
+geenToegangD7 = "Geen toegang / Inloggen - [CLIENT]"
 geenToegangD9 = "Inloggen | Paddle"
 
 # Eerst importeren we wat benodigde libraries - beautifulsoup kan html parsen en mechanicalsoup kan formulieren invullen/submitten
@@ -19,7 +19,7 @@ browser = mechanicalsoup.StatefulBrowser()
 # headers/cookies zodat het script ingelogd is wanneer hij de pagina's bezoekt - soms gebruik ik een functie ook zonder headers om de niet-ingelogde pagina te checken
 
 headersD7 = {
-    'authority': 'cbc0efe12d0981e1.login.paddlecms.net',
+    'authority': 'login.example-cms.net',
     'cache-control': 'max-age=0',
     'sec-ch-ua': '" Not;A Brand";v="99", "Microsoft Edge";v="97", "Chromium";v="97"',
     'sec-ch-ua-mobile': '?0',
@@ -33,11 +33,11 @@ headersD7 = {
     'sec-fetch-dest': 'document',
     'referer': 'https://www.google.com/',
     'accept-language': 'nl,en-US;q=0.9,en;q=0.8,fr;q=0.7',
-    'cookie': 'has_js=1; SSESS1109b12a5bb6ef711e16f250ef260571=7kkD_B-XDkzL_SR1S93d6hwSzWNySU_UI3ZscS04rME; aucp13n=tfcpsj',
+    'cookie': 'has_js=1; SSESS<SESSION-COOKIE>',
 }
 
 headersD9 = {
-    'authority': 'vleteren.paddlecms.net',
+    'authority': 'client-site.example-cms.net',
     'cache-control': 'max-age=0',
     'sec-ch-ua': '" Not;A Brand";v="99", "Microsoft Edge";v="97", "Chromium";v="97"',
     'sec-ch-ua-mobile': '?0',
@@ -50,7 +50,7 @@ headersD9 = {
     'sec-fetch-user': '?1',
     'sec-fetch-dest': 'document',
     'accept-language': 'nl,en-US;q=0.9,en;q=0.8,fr;q=0.7',
-    'cookie': 'SSESS3672d1c511030927c1d56186e07bd951=V1BmKvggvQvLx8nh9AuYbllf8iJgNYt8zcGRujDgbdKPHtD0; _BEAMER_USER_ID_jnSwhiVG27643=b6bb4e19-4417-4a79-ba16-beeec2dde46b; _BEAMER_FIRST_VISIT_jnSwhiVG27643=2022-01-20T18:22:48.878Z; _BEAMER_FILTER_BY_URL_jnSwhiVG27643=false',
+    'cookie': 'SSESS<SESSION-COOKIE>',
 }
 
 
