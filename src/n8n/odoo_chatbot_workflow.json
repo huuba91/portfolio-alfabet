@@ -239,7 +239,7 @@
     {
       "parameters": {
         "description": "Description: Generates a direct URL to an Odoo record. Use this whenever you return a list of items (like companies, tickets, or projects) so the user can click to open them in their browser. You must provide the exact model name and ID.",
-        "jsCode": "const baseUrl = \"https://your-odoo-domain.com\";\nreturn `${baseUrl}/web#id=${id}&model=${model_name}&view_type=form`;"
+        "jsCode": "const baseUrl = \"$env.ODOO_URL\";\nreturn `${baseUrl}/web#id=${id}&model=${model_name}&view_type=form`;"
       },
       "type": "@n8n/n8n-nodes-langchain.toolCode",
       "typeVersion": 1.3,
